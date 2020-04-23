@@ -1,0 +1,48 @@
+<ion-header>
+
+
+    <ion-toolbar>
+
+        <ion-title>
+            App zoom
+        </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="logout()">
+                Cerrar sesión
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+    <form class="text-center p-5" (ngSubmit)="formEnterMeeting()">
+
+        <p class="h4 mb-4">Ingresar a llamada</p>
+
+        <p>Ingrese los datos de la llamada</p>
+
+        <!-- Meeting ID -->
+        <label>Nombre</label>
+        <input type="text" class="form-control mb-4" [(ngModel)]="formMeeting.nombre" name="nombre">
+
+        <!-- Meeting ID -->
+        <label>Meeting ID</label>
+        <input type="text" class="form-control mb-4" [(ngModel)]="formMeeting.meetingId" name="meetingId">
+
+        <!-- Meeting password -->
+        <label>Meeting password</label>
+        <input type="text" class="form-control mb-4" [(ngModel)]="formMeeting.meetingPassword" name="meetingPassword">
+
+        <!-- enter button -->
+        <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+
+
+    </form>
+
+
+
+</ion-content>

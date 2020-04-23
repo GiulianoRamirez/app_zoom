@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            App zoom
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <!-- <button class="btn btn-primary btn-block my-4" type="button" (click)="inicializar()">Inicializar</button> -->
+
+    <!-- form login -->
+    <form class="text-center p-5" (ngSubmit)="logForm()">
+
+        <p class="h4 mb-4">Iniciar sesión en Zoom</p>
+
+        <!-- correo -->
+        <input type="email" class="form-control mb-4" placeholder="Correo" [(ngModel)]="formLogin.email" name="email">
+
+        <!-- contraseña -->
+        <input type="password" class="form-control mb-4" placeholder="Contraseña" [(ngModel)]="formLogin.password" name="password">
+
+        <!-- boton iniciar sesion -->
+        <button class="btn btn-primary btn-block my-4" type="submit">Iniciar sesión</button>
+
+
+    </form>
+    <!-- form login -->
+
+
+</ion-content>
