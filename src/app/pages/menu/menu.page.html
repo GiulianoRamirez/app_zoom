@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            App zoom
+        </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="logout()">
+                Cerrar sesión
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <div class="text-center mt-3">
+        <p class="h4 mb-3">Menu</p>
+        <button type="button" class="btn btn-primary btn-lg" style="width: 80%;" (click)="navigateToUnirseLlamada()">Entrar a llamada</button>
+        <button type="button" class="btn btn-primary btn-lg" style="width: 80%;" (click)="CreateMetting()">Crear llamada</button>
+    </div>
+
+</ion-content>

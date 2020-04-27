@@ -11,10 +11,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/logeado/logeado.module').then( m => m.LogeadoPageModule)
   },
   {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
+  
 ];
 
 @NgModule({

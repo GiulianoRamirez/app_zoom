@@ -8,6 +8,8 @@ import { Zoom } from '@ionic-native/zoom/ngx';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+import { ToastController } from '@ionic/angular';
+
 
 
 @Component({
@@ -23,12 +25,30 @@ export class HomePage {
     password: ""
   }
 
-  constructor(private rutas: Router, private zoomService: Zoom, private formBuilder: FormBuilder, public navCtrl: NavController) {
+  constructor(private rutas: Router, private zoomService: Zoom, private formBuilder: FormBuilder, public navCtrl: NavController, public toastController: ToastController) {
 
   }
 
   ngOnInit() {
   }
+
+
+  async presentToastSesionIniciada() {
+    const toast = await this.toastController.create({
+      message: 'Sesion iniciada con exito!',
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  async presentToastErrorIniciarSesion() {
+    const toast = await this.toastController.create({
+      message: 'Error al iniciar sesion, intente denuevo.',
+      duration: 2000
+    });
+    toast.present();
+  }
+
 
   logForm() {
     console.log(this.formLogin)
@@ -40,12 +60,14 @@ export class HomePage {
     this.zoomService.login(correo, contrasena)
     .then((success: any) => {
       console.log(success);
-      this.rutas.navigate(['/logeado'])
+      this.presentToastSesionIniciada()
+      this.rutas.navigate(['/menu'])
     })
-    .catch((error: any) => console.log(error));
+    .catch((error: any) =>{
+      this.presentToastErrorIniciarSesion()
+        console.log(error)
+    });
+
   }
-
-
-
 
 }
